@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+    font-family:'Courier New', Courier, monospace;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 75px;
+    top: 0;
+    padding: 0px 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 230, 230);
+    
+}
+header h1 {
+    padding-left: 2vw;
+    width: 60vw;
+}
+
+#header-img {
+    width: auto;
+    max-width: 75px;
+    height: 70%;
+}
+
+#nav-bar {
+    width: 35vw;
+}
+
+#nav-bar ul{
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+main{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+#email-form{
+    text-align: center;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    margin-top: 1.5rem;
+}
+
+#form input[type="email"] {
+    height: 1.8rem;
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+
+
+
+.btn {
+    background-color: gold;
+    padding: 0.7rem;
+    font-weight: 600;
+    border: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.feature{
+    display: flex;
+    padding: 20px 0;
+    height: 125px;
+}
+
+.feature:last-of-type{
+    margin-bottom: 4vw;
+}
+
+.icon {
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.icon img{
+    width: 50px;
+    height: auto;
+}
+
+.feature-description {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#demonstration {
+    text-align: center;
+    height: 300px;
+    margin-bottom: 6vw;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+}
+
+#pricing {
+    display: flex;
+    justify-content:space-around;
+}
+
+.product{
+    display: flex;
+    width: calc(100%/3.8);
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 7vw;
+}
+
+.level {
+    background-color: gainsboro;
+    font-size: normal;
+    padding: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    border-radius: 10px 10px 0 0;
+}
+
+.price {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.details ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    height: 130px;
+}
+
+.details li {
+    padding: 5px;
+    font-size: small;
+}
+
+.details button{
+    padding: 8px;
+    font-size: 20px;
+    background-color: gold;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+
+}
+
+button:hover, .btn:hover {
+    cursor: pointer;
+    background-color: goldenrod;
+    transition: 1s;
+}
+
+footer {
+    background-color: lightgray;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 1000px;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+}
+
+footer li {
+    margin: 20px;
+}
+
+span, .attributions a, .attributions {
+    display: block;
+    font-size: small;
+    text-align: right;
+    color: black;
+}
+
+.attributions a:hover {
+    background-color:gray ;
+}
+
+@media (max-width:800px){
+    #pricing {
+        flex-direction: column;
+    }
+
+    .product {
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    #nav-bar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

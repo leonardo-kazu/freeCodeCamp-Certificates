@@ -1,0 +1,260 @@
+@media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+:root{
+    --header-color: #be0130;
+    --font-color: #eeeeee;
+    --background-color1: #3f3f3f;
+    --background-color2: rgb(59, 71, 117);
+    /* font-family: "Noto Sans Mono", "Courier New", monospace; */
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: var(--header-color);
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+header h1 a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+header h1 {
+    display: block;
+    width: 65%;
+    margin-left: 2rem;
+}
+
+#navbar {
+    width: 35%;
+}
+
+header ul {
+    display: flex;
+    justify-content: flex-end;  
+    list-style-type: none;
+    padding-right: 2rem;
+
+}
+
+header li {
+    text-align: center;
+    width: fit-content;
+}
+
+.nav-link {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: large;
+}
+
+.nav-link:hover {
+    background-color: var(--background-color1);
+}
+
+#welcome-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(45deg, var(--background-color1), #161616 );
+}
+
+.welcome-title{
+    font-size: 5.5rem;
+    font-weight: 500;
+    color: var(--font-color);
+}
+
+.welcome-description {
+    font-size: 3rem;
+    color: var(--header-color);
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 1.5rem;
+}
+
+#about {
+    text-align: center;
+    padding: 5rem;
+    color: var(--font-color);
+    background-color: var(--background-color2);
+    font-size: 1.5rem;
+}
+
+#about article p {
+    margin: 1rem 0;
+}
+
+.crossed {
+    text-decoration: line-through;
+    font-size: 1.2rem;
+}
+
+#projects {
+    width: 100%;
+    text-align: center;
+    padding: 5rem;
+    background-color: var(--background-color2);
+    color: var(--font-color);
+    border-top: 0.5px groove rgb(49, 59, 99);
+}
+
+#projects h1 {
+    margin-bottom: 15vh;
+    font-size: 5.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid var(--font-color);
+    text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    max-width: 1300px;
+    grid-gap: 5rem;
+    margin: 0 auto;
+
+}
+
+.project-tile {
+    background-color: var(--background-color1) ;
+    text-decoration: none;
+    border-radius: 30px 30px 10px 10px;
+    
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.project-tile:hover .code {
+    color: orange;
+    font-style: italic;
+
+}
+
+.project-tlte:hover .project-title {
+    font-style: italic;
+}
+
+.project-img {
+    height: calc(400px - 2rem);
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0 ;
+}
+
+.project-title {
+    padding: 1rem;
+    color: var(--font-color);
+    font-size: 2rem;
+
+}
+
+.code {
+    font-style: normal;
+    transition:0.5s color ease-in-out;
+    color: var(--background-color1);
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    background-color: var(--background-color1);
+    padding: 10rem;
+    color: var(--font-color);
+    border-bottom: 5px solid var(--header-color);
+}
+
+.contact-title {
+    text-align: center;
+    width: 60vw;
+    font-size: 5.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--font-color);
+    margin-bottom: 2rem;
+    text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-description {
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 10vh;
+}
+
+.contact-links {
+    display: flex;
+    max-width: 70vw;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    font-size: 3rem;
+    text-decoration: none;
+    color: var(--font-color);
+    text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease-out;
+
+}
+
+.contact-link:hover {
+    transform: translateY(15px);
+    
+}
+
+
+
+footer {
+    display: flex;
+    width: 100%;
+    padding: 3vw 10vw ;
+    background-color: var(--background-color1);
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    color: var(--font-color);
+}
+
+footer a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+@media (max-width: 550px) {
+    .welcome-title, #projects h1, .contact-title {
+        font-size: calc(5.5rem*0.6);
+    }
+    .welcome-description, .contact-description, .contact-link{
+        font-size: calc(3rem*0.6);
+    }
+    footer {
+        font-size: calc(2rem*0.6);
+    }
+    
+}

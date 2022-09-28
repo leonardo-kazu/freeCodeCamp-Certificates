@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta charset="utf-8" />
+        <meta type="viewport" content="width=device-width, initial-scal=1.0">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="icon" type="image/png" href="https://flaticons.net/custom.php?i=zgXMHDVuW6Nn8SqIPIJcp4CnJAXRIk&format=png&size=422" />
+    </head>
+    <body>
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Help us understand which kind of dogs programmers have!</p>
+        <p id="disclaimer">Disclaimer: this form goes to https://www.omfgdogs.com/#</p>
+        <form id="survey-form" action="https://www.omfgdogs.com/#">
+            <fieldset>
+                <label id="name-label">Your name <input type="text" name="name" id="name" placeholder="Your awesome name!" required /></label>
+                <label>Dog's name <input type="text"  name="dog-name" placeholder="Your dog's awesome name!" required /></label>
+                <label id="email-label">E-mail <input type="email" name="email" id="email" placeholder="doggo@goodboy.com" required/></label>
+                <label id="number-label">Dog's Age (years) <input type="number" name="dog-age" id="number" min=0 max=18  placeholder="0" /></label>
+            </fieldset>
+            <fieldset>
+                <p>Where do you share your dog's photos?</p>
+                <select name="dog-share" id="dropdown">
+                    <option value="">Nowhere</option>
+                    <option value="1">Facebook</option>
+                    <option value="2">Instagram</option>
+                    <option value="3">Twitter</option>
+                    <option value="4">Other</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <p>How would you describe your dog's energy?</p>
+                <label><input class="inline" type="radio" name="dog-energy" value="lazy" checked /> Lazy</label>
+                <label><input class="inline" type="radio" name="dog-energy" value="hiper" /> Hiper</label>
+                <label><input class="inline" type="radio" name="dog-energy" value="both" /> Both</label>
+            </fieldset>
+            <fieldset>
+                <p>What are your dog's personality traits?</p>
+                <label><input class="inline" type="checkbox" name="trait" value="confident" > Confident</label>
+                <label><input class="inline" type="checkbox" name="trait" value="indepndent" > Independent</label>
+                <label><input class="inline" type="checkbox" name="trait" value="happy" > Happy</label>
+                <label><input class="inline" type="checkbox" name="trait" value="sad" > Sad</label>
+                <label><input class="inline" type="checkbox" name="trait" value="chill" > Chill</label>
+                <label><input class="inline" type="checkbox" name="trait" value="scared" > Scared</label>
+                <label><input class="inline" type="checkbox" name="trait" value="timid" > Timid</label>
+                <label><input class="inline" type="checkbox" name="trait" value="angry" > Angry</label>
+                <label><input class="inline" type="checkbox" name="trait" value="fighter" > Fighter</label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    <textarea name="description" cols="30" rows="3" placeholder="Who's a good doggo?"></textarea>
+                </label>
+            </fieldset>
+            <button type="submit" value="Submit" id="submit">Submit</button>
+        </form>
+    </body>
+</html>

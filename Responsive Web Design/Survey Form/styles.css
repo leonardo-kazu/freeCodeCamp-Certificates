@@ -1,0 +1,88 @@
+body {
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	background-image: linear-gradient(180deg, rgba(17, 71, 15, 0.8), rgba(68, 83, 67, 0.7)), url(https://images.pexels.com/photos/5463180/pexels-photo-5463180.jpeg);
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.4;
+	color:rgb(231, 231, 231);
+}
+
+#title, #disclaimer, #description {
+	text-align: center;
+	margin: 1em, auto;
+}
+
+#title, #description {
+	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#disclaimer {
+	font-style: italic;
+	font-size: 1rem;
+	color: rgb(179, 179, 179);
+}
+
+form {
+	width: 60vw;
+	max-width: 500px;
+	min-width: 300px;
+	margin: 0 auto;
+	padding-bottom: 1rem;
+	border-radius: 1rem;
+	background-color: rgba(1, 19, 1, 0.712);
+}
+
+fieldset {
+	border: none;
+  	padding: 0 2rem 0 2rem;
+}
+fieldset:first-of-type {
+	padding-top: 2rem;
+}
+
+label {
+	display: block;
+	margin: 0.5em 0;
+}
+
+input, textarea, select {
+	width: 100%;
+	margin: 10px 0;
+	min-height: 2em;
+	resize: vertical;
+	font-size: 1rem;
+	background-color: rgba(1, 19, 1, 0.712);
+	border: 1px solid rgba(1, 19, 1, 0.712);
+  	color: #ffffff;
+}
+
+
+button {
+	display: block;
+	width: 60%;
+	font-size: 1rem;
+	margin: 1em auto;
+	border-radius: 1rem;
+	cursor: pointer;
+	background-color: rgba(1, 19, 1, 0.712);
+	border: 1px solid rgba(1, 19, 1, 0.712);
+  	color: #ffffff;
+}
+
+button:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+
+.inline {
+	width: unset;
+	margin: 0 0.5em 0 0;
+	vertical-align: middle;
+}
+
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Python Documentation</title>
+		<meta name="icon" href="" />
+		<link rel="icon" type="image/x-icon" href="https://www.python.org/static/favicon.ico">
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<nav id="navbar">
+			<header><h1><a href="#main-doc">Python Documentation</h1></a></header>
+			<ul>
+				<li><a class="nav-link" href="#Introduction">Introduction</a></li>
+				<li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+				<li><a class="nav-link" href="#Variables">Variables</a></li>
+				<li><a class="nav-link" href="#Declaring_variables">Declaring variables</a></li>
+				<li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
+				<li><a class="nav-link" href="#Constants">Constants</a></li>
+				<li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+				<li><a class="nav-link" href="#if...else_statement"><code>if...else</code> statement</a></li>
+				<li><a class="nav-link" href="#while_statement"><code>while</code> statement</a></li>
+				<li><a class="nav-link" href="#Function_declarations">Function declarations</a></li>
+				<li><a class="nav-link" href="#Reference">Reference</a></li>
+			</ul>
+		</nav>
+		<main id="main-doc">
+			<section id="Introduction" class="main-section">
+				<header><h1>Introduction</h1></header>
+				<p>Python is an easy to learn, powerful programming language. It
+				has efficient high-level data structures and a simple but
+				effective approach to object-oriented programming. Python's
+				elegant syntax and dynamic typing, together with its 
+				interpreted nature, make it an ideal language for scripting and
+				rapid application development in many areas on most platforms.
+				</p>
+				<p>The Python interpreter and the extensive standard library 
+				are freely available in source or binary form for all major 
+				platforms from the Python web site, <a target="_blank" 
+				href="https://www.python.org/">https://www.python.org/</a>, and 
+				may be freely distributed. The same site also contains 
+				distributions of and pointers to many free third party Python 
+				modules, programs and tools, and additional documentation.</p>
+				<p>Another important factor of Python is that in indentation is 
+				is key, since Python is a dynamic language, it's been made so that scopes are decided trough indentation.</p>
+			</section>
+			<section id="Hello_World" class="main-section">
+				<header><h1>Hello World</h1></header>
+				<p>To get started with writing a python script, open any text 
+				editor (in this documentation we'll say Notepad++) and write 
+				your first "Hello world" Python code:</p>
+				<pre><code>print("Hello world")</code></pre>
+				<p>Save your script and open it trough the terminal with the 
+				command:</p>
+				<pre><code>python3 yourfilename.py</code></pre>
+				<p><i>Voilá</i> you wrote your first python script.</p>
+			</section>
+			<section id="Variables" class="main-section">
+				<header><h1>Variables</h1></header>
+				<p>Variables are symbolic names for values in your application. 
+				The names of variables, identifiers, conform to some rules.</p>
+				<p>A Python identifiers cannot be a protected keyword of the
+				Python language, also, Python is case sensitive, this means 
+				that the variable: <code>Test</code> and <code>test</code> are
+				two different variables.</p>
+			</section>
+			<section id="Declaring_variables" class="main-section">
+				<header><h1>Declaring variables</h1></header>
+				<p>In Python there's no need to declare a variable with a
+				certain data type, this's because it automatically determines
+				the type in accordance of the value assigned.</p>
+				<p>For example: </p>
+				<pre>
+<code>x = 42 <span class="comment">#Declaring an integer</span></code>
+<code>y = 1.2 <span class="comment">#Declaring a float</span></code>
+<code>name = "howdy" <span class="comment">#Declaring a string</span></code></pre>
+
+			</section>
+			<section id="Variable_scope" class="main-section">
+				<header><h1>Variable scope</h1></header>
+				<p>All variables in Python are locally scope, in case the local 
+				of the scope is the global document, the variable is a global
+				scope variable, in case it's declared inside a fuction, the
+				variable will only be acessible inside that function.</p>
+			</section>
+			<section id="Constants" class="main-section">
+				<header><h1>Constants</h1></header>
+				<p>By default Python does <b class="bold">not</b> have
+				constants, so to resolve this probleam, it's widely addepted 
+				that constants be declared in all caps, with underscores (_)
+				for spaces. For example:</p>
+				<pre><code>THIS_IS_MY_CONSTANT = 3.14</code></pre>
+				<p>Beware that, you will still be available to change the
+				variable value. This is only an aesthetic change so it becomes
+				easier to understand.</p>
+			</section>
+			<section id="Data_Types" class="main-section">
+				<header><h1>Data Types</h1></header>
+				<p>Python has the following data types built-in by default:</p>
+					<ul>
+						<li>Text types:</li>
+						<ul>
+							<li><code>str</code></li>
+						</ul>
+						<li>Numeric types</li>
+						<ul>
+							<li><code>int</code></li>
+							<li><code>float</code></li>
+							<li><code>complex</code></li>
+						</ul>
+						<li>Sequence types</li>
+						<ul>
+							<li><code>list</code></li>
+							<li><code>tuple</code></li>
+							<li><code>range</code></li>
+						</ul>
+						<li>Mapping type</li>
+						<ul>
+							<li><code>dict</code></li>
+						</ul>
+						<li>Set types</li>
+						<ul>
+							<li><code>set</code></li>
+							<li><code>frozenset</code></li>
+						</ul>
+						<li>Boolean types</li>
+						<ul>
+							<li><code>bool</code></li>
+						</ul>
+						<li>Binary types</li>
+						<ul>
+							<li><code>bytes</code></li>
+							<li><code>bytearray</code></li>
+							<li><code>memoryview</code></li>
+						</ul>
+						<li>None type</li>
+						<ul>
+							<li><code>NoneType</code></li>
+						</ul>
+					</ul>
+
+			</section>
+			<section id="if...else_statement" class="main-section">
+				<header><h1><code>if...else</code> statement</h1></header>
+				<p>Use the if statement to execute a statement if a logical 
+				condition is true. Use the optional else clause to execute a 
+				statement if the condition is false. An if statement looks as 
+				follows:</p>
+				<pre>
+<code>if (condition):</code>
+<code>    statement_1</code>
+<code>else:</code>
+<code>    statement_2</code></pre>
+				<p><i>condition</i> can be any expression that evaluates to
+				true or false, if the condition evaluates to true,
+				<i>statement_1</i> will be executed, otherwise 
+				<i>statement_2</i> will be executed.</p>
+				<p>In case that there's a need for more than one condition to be
+				tested in sequence, the following code could be used:</p>
+				<pre>
+<code>if (condition_1):</code>
+<code>    statement_1</code>
+<code>elif (condition_2):</code>
+<code>    statement_2</code>
+<code>elif (condition_n):</code>
+<code>    statement_3</code>
+<code>else:</code>
+<code>    statement_last</code></pre>
+				<p>In the case multiples conditions are true, only the first to
+				evaluated to true will be executed, and the others will be 
+				discarted, if none of the conditions are true, then the else 
+				statement will be executed</p>
+			</section>
+			<section id="while_statement" class="main-section">
+				<header><h1><code>while</code> statement</h1></header>
+				<p>The <code>while</code> statement is used for repeated 
+				execution (loop) as long as a condition is true:</p>
+				<pre>
+<code>while (condition):</code>
+<code>    statement</code></pre>
+				<p>This repeatedly tests the condition and, if it is true,
+				executes the statement. If the condition is false, the loop is 
+				terminated.</p>
+			</section>
+			<section id="Function_declarations" class="main-section">
+				<header><h1>Function declarations</h1></header>
+				<p>A function definition consists of:</p>
+				<ul>
+					<li>The keyword: <code>def</code></li>
+					<li>The name of the function</li>
+					<li>A list of the arguments of the function, in parentheses
+					and separathed by commas.</li>
+					<li>The statement that will run in the correct indentation.
+					</li>
+				</ul>
+				<p>As shown in the following code:</p>
+				<pre>
+<code>def function_name(arg):</code>
+<code>    statement</code></pre>
+				<p>The <code>return</code> keyword, specifies the value 
+				returned by the function (if the function returns something)</p>
+			</section>
+			<section id="Reference" class="main-section">
+				<header><h1>Reference</h1></header>
+				<p>All the documentation in this page was made/inspired with 
+				multiples content from a <a target="_blank" href="https://technical-documentation-page.freecodecamp.rocks/">freeCodeCamp 
+				Project</a> and the <a target="_blank" href="https://docs.python.org/3/tutorial/">PSF</a> tutorial.</p>
+			</section>
+			<footer>
+				<p>Go back <a href="#main-doc">up</a>.</p>
+			</footer>
+		</main>
+	</body>
+</html>
+
