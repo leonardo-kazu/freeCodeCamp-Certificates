@@ -6,9 +6,9 @@ function palindrome(str) {
         return false;
       }
     }
-  
-  
+
+
     return true;
   }
-  
+
   console.log(palindrome("E y     e"));
