@@ -1,0 +1,29 @@
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  margin: 0;
+  padding: 3vh 10vw;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.area {
+  width: 30vw;
+}
+.minimized {
+  display: none !important;
+}
+.maximized {
+  width: 75vw;
+  margin: 0;
+}
+
+.previewer {
+  background-color: white;
+}
+
