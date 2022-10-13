@@ -1,0 +1,43 @@
+body {
+    background-color: lightsteelblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+#container {
+    width: 90vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    overflow: auto;
+}
+
+#links {
+    margin: 10px;
+}
+
+h1, p {
+    margin: 0;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+tspan {
+    font-size: 9px;
+}
+
+#tooltip {
+    position: absolute;
+    text-align: center;
+    background-color: gold;
+    padding: 10px;
+    border: 1px solid black;
+    
+}

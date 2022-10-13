@@ -1,0 +1,4 @@
+- (Bar Chart)[https://codepen.io/leonardo-kazu/pen/ExLdJQz]
+- (Scatter Plot)[https://codepen.io/leonardo-kazu/pen/wvjRdEx]
+- (Heat Map)[https://codepen.io/leonardo-kazu/pen/PoeXBmx]
+- (Choropleth Map)[https://codepen.io/leonardo-kazu/pen/bGMzGqz]
