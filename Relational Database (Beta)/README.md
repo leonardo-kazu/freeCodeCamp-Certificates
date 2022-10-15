@@ -1,0 +1,1 @@
+All PostgreSQL code made from pg_dump for the Relational Database (Beta) Certificate.
