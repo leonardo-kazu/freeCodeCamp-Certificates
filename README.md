@@ -6,3 +6,4 @@ All the projects needed for the freeCodeCamp certificates
 - JavaScript Algorithms and Data Structures
 - Front End Development Libraries
 - Data Visualization
+- Relational Database
