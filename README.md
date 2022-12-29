@@ -7,3 +7,4 @@ All the projects needed for the freeCodeCamp certificates
 - Front End Development Libraries
 - Data Visualization
 - Relational Database
+- Backend Development and APIs
