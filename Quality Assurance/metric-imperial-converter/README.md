@@ -36,11 +36,11 @@ Como resposta se recebe um JSON com os seguintes atributos:
 
 ```json
 {
-    "initNum": "Number" <valor original>,
-    "initUnit": "String" <unidade original>,
-    "returnNum": "Number" <valor convertido>,
-    "returnUnit": "String" <unidade convertida>,
-    "string": "String" <mensagem formatada>
+    "initNum": "Number" ,
+    "initUnit": "String" ,
+    "returnNum": "Number" ,
+    "returnUnit": "String" ,
+    "string": "String"
 }
 ```
 
