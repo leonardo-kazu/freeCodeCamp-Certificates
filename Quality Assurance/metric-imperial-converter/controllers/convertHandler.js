@@ -9,10 +9,14 @@ function ConvertHandler() {
 
     // If we have a valid unit we can get the numeric part
     let num;
-    const bar = input.slice(0, unitIndex).search(/\//);
+    const bar = input.slice(0, unitIndex).match(/\//);
     if (bar) {
-      const first = parseFloat(input.slice(0, bar));
-      const second = parseFloat(input.slice(bar + 1));
+      if (!input.slice(0, unitIndex).match(/\/?/g)) {
+        return { unit: null };
+      }
+      const barIndex = input.slice(0, unitIndex).search(/\//);
+      const first = parseFloat(input.slice(0, barIndex));
+      const second = parseFloat(input.slice(barIndex + 1));
       num = first / second;
     } else {
       num = parseFloat(input.slice(0, unitIndex));
@@ -20,7 +24,7 @@ function ConvertHandler() {
     if (!num) {
       num = 1;
     }
-    return { num, unit };
+    return { num: num, unit };
   };
 
   this.convert = (initNum, initUnit) => {
