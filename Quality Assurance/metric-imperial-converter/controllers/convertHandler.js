@@ -11,7 +11,7 @@ function ConvertHandler() {
     let num;
     const bar = input.slice(0, unitIndex).match(/\//);
     if (bar) {
-      if (!input.slice(0, unitIndex).match(/\/?/g)) {
+      if (!input.slice(0, unitIndex).match(/^[0-9.]+\/[0-9.]+$/g)) {
         return { unit: null };
       }
       const barIndex = input.slice(0, unitIndex).search(/\//);

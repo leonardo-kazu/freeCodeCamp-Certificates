@@ -16,7 +16,7 @@ suite('Unit Tests', () => {
       assert.isOk(convertHandler.getData('2/3mi').num);
     });
     test('convertHandler should correctly read a fractional input with a decimal.', () => {
-      assert.isOk(convertHandler.getData('2.3/mi').num);
+      assert.isOk(convertHandler.getData('2.3/3mi').num);
     });
     test('convertHandler should correctly return an error on a double-fraction (i.e. 3/2/3).', () => {
       assert.isNotOk(convertHandler.getData('3/2/3mi').num);
