@@ -7,25 +7,29 @@ function ConvertHandler() {
       unit = null;
     }
 
-    // If we have a valid unit we can get the numeric part
+    // If we have a valid unit we can search for a valid numeric part
     let num;
+
+    // Checking if we have a bar
     const bar = input.slice(0, unitIndex).match(/\//);
     if (bar) {
       const barIndex = input.slice(0, unitIndex).search(/\//);
       const first = parseFloat(input.slice(0, barIndex));
       const second = parseFloat(input.slice(barIndex + 1));
       num = first / second;
-      if (!input.slice(0, unitIndex).match(/^[0-9.]+\/[0-9.]+$/g)) {
+
+      // Checking for valid decimal part
+      if (!input.slice(0, unitIndex).match(/^[0-9.]+\/[0-9.]*$/g)) {
         num = null;
       }
     } else {
       num = parseFloat(input.slice(0, unitIndex));
-      if (!input.slice(0, unitIndex).match(/^[0-9]+\.[0-9]+$/)) {
+      // If the start index is a unit num = 0
+      if (unitIndex == 0) {
+        num = 1;
+      } else if (!input.slice(0, unitIndex).match(/^[0-9]+\.?[0-9]*$/)) {
         num = null;
       }
-    }
-    if (isNaN(num)) {
-      num = 1;
     }
     return { num: num, unit: unit };
   };

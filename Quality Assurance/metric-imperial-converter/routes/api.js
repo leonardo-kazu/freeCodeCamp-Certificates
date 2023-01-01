@@ -11,7 +11,7 @@ module.exports = function (app) {
     // Setting up so we can deal with any kind of case
     const data = req.query.input.toLowerCase();
 
-    const { num, unit } = convertHandler.getData(data);
+    let { num, unit } = convertHandler.getData(data);
     if (!unit && !num) {
       res.send('invalid number and unit');
       return;
@@ -31,6 +31,10 @@ module.exports = function (app) {
       returnNum,
       convertHandler.getSpelledUnit(returnUnit)
     );
+
+    if (unit == 'l') {
+      unit = 'L';
+    }
 
     res.json({
       initNum: num,
