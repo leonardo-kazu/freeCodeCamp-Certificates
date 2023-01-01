@@ -80,6 +80,10 @@ function ConvertHandler() {
         result = 'liters';
         break;
 
+      case 'l':
+        result = 'liters';
+        break;
+
       case 'gal':
         result = 'gallons';
         break;
