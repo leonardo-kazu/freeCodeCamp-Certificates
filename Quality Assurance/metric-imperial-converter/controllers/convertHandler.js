@@ -2,29 +2,32 @@ function ConvertHandler() {
   this.getData = (input) => {
     // Searching for the unit and seeing if it is valid trough a regex
     const unitIndex = input.search(/[a-z]/);
-    const unit = input.slice(unitIndex);
+    let unit = input.slice(unitIndex);
     if (!unit.match(/^((l)|(gal)|(lbs)|(kg)|(mi)|(km))$/)) {
-      return { unit: null };
+      unit = null;
     }
 
     // If we have a valid unit we can get the numeric part
     let num;
     const bar = input.slice(0, unitIndex).match(/\//);
     if (bar) {
-      if (!input.slice(0, unitIndex).match(/^[0-9.]+\/[0-9.]+$/g)) {
-        return { unit: null };
-      }
       const barIndex = input.slice(0, unitIndex).search(/\//);
       const first = parseFloat(input.slice(0, barIndex));
       const second = parseFloat(input.slice(barIndex + 1));
       num = first / second;
+      if (!input.slice(0, unitIndex).match(/^[0-9.]+\/[0-9.]+$/g)) {
+        num = null;
+      }
     } else {
       num = parseFloat(input.slice(0, unitIndex));
+      if (!input.slice(0, unitIndex).match(/^[0-9]+\.[0-9]+$/)) {
+        num = null;
+      }
     }
-    if (!num) {
+    if (isNaN(num)) {
       num = 1;
     }
-    return { num: num, unit };
+    return { num: num, unit: unit };
   };
 
   this.convert = (initNum, initUnit) => {

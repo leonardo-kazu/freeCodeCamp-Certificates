@@ -12,7 +12,13 @@ module.exports = function (app) {
     const data = req.query.input.toLowerCase();
 
     const { num, unit } = convertHandler.getData(data);
-    if (!unit) {
+    if (!unit && !num) {
+      res.send('invalid number and unit');
+      return;
+    } else if (!num) {
+      res.send('invalid number');
+      return;
+    } else if (!unit) {
       res.send('invalid unit');
       return;
     }
