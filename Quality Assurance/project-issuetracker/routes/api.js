@@ -24,6 +24,12 @@ const issueSchema = new mongoose.Schema({
 const Issue = issuesDB.model('Issue', issueSchema);
 
 module.exports = (app) => {
+  // middleware for debugging
+  app.use((req, res, next) => {
+    console.log(` ${req.method} - /${req.path}`);
+    next();
+  });
+
   app
     .route('/api/issues/:project')
     .get(async (req, res) => {
@@ -38,7 +44,7 @@ module.exports = (app) => {
       const project = req.params.project;
 
       // Checking for valid req.body
-      if (!req.body.issue_title && !req.body.issue_text && !req.body.created_by) {
+      if (!req.body.issue_title || !req.body.issue_text || !req.body.created_by) {
         res.json({ error: 'required field(s) missing' });
         return;
       }
@@ -52,10 +58,8 @@ module.exports = (app) => {
         assigned_to: req.body.assigned_to,
         status_text: req.body.status_text,
       });
-      console.log('ghre');
       // Saving new issue and responding to the client
       issue.save((err, data) => {
-        console.log(data);
         if (err) {
           console.error(err);
           res.json({ error: err });
@@ -77,7 +81,6 @@ module.exports = (app) => {
     .put(async (req, res) => {
       // Getting the project in question
       const project = req.params.project;
-
       // Checking for one _id
       if (!req.body._id) {
         res.json({ error: 'missing _id' });
@@ -107,23 +110,31 @@ module.exports = (app) => {
         created_by: req.body.created_by,
         assigned_to: req.body.assigned_to,
         status_text: req.body.status_text,
-        open: req.body.open,
       };
-
+      if (req.body.open) {
+        update.open = !req.body.open;
+      }
       // Deleting places which aren't being updated
       Object.keys(update).forEach((key) => {
-        if (update[key] === '' || update[key] === null) {
+        if (update[key] === '' || update[key] === undefined || update[key] === null) {
           delete update[key];
         }
       });
 
+      update.updated_on = new Date(Date.now());
+
       // Finding and updating
-      await Issue.findOneAndUpdate(filter, update, (err, data) => {
-        if (err) {
+      Issue.findOne(filter, async (err, data) => {
+        if (err || !data) {
           res.json({ error: 'could not update', _id: req.body._id });
           return;
         }
+        Object.keys(update).forEach((key) => {
+          data[key] = update[key];
+        });
+        await data.save();
         res.json({ result: 'successfully updated', _id: req.body._id });
+        return;
       });
     })
 
