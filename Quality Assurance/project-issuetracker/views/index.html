@@ -18,121 +18,176 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <header>
-      <h1>Issue Tracker</h1>
+  <body class="bg-light">
+    <header class="mt-2 mb-2 text-bg-light">
+      <h1 class="container display-1">Issue Tracker</h1>
     </header>
-    <section style="margin: 0 50px">
-      <h3>Example <code>GET</code> usage</h3>
-      <code>/api/issues/{project}</code><br />
-      <code>/api/issues/{project}?open=true&amp;assigned_to=Joe</code><br />
-      <h3>Example return</h3>
-      <pre>
-<code>[
-  {
-    "_id": "5871dda29faedc3491ff93bb",
-    "issue_title": "Fix error in posting data",
-    "issue_text": "When we post data it has an error.",
-    "created_on": "2017-01-08T06:35:14.240Z",
-    "updated_on": "2017-01-08T06:35:14.240Z",
-    "created_by": "Joe",
-    "assigned_to": "Joe",
-    "open": true,
-    "status_text": "In QA"
-  },
-  ...
- ]
-</code>
-</pre>
-    </section>
-    <hr style="margin: 0 50px" />
-    <section id="testui" style="margin-left: 50px">
-      <h3>Examples</h3>
-      Go to <a href="/api/issues/apitest/"><code>/api/issues/apitest/</code></a> project
-      <h2 style="text-align: left">API Tests</h2>
-      <h3>Submit issue on <i>apitest</i></h3>
-      <form id="testForm" class="border">
-        <input
-          type="text"
-          name="issue_title"
-          placeholder="*Title"
-          style="width: 100px"
-          required=""
-        /><br />
-        <textarea
-          type="text"
-          name="issue_text"
-          placeholder="*Text"
-          style="width: 100px"
-          required=""
-        ></textarea
-        ><br />
-        <input
-          type="text"
-          name="created_by"
-          placeholder="*Created by"
-          style="width: 100px"
-          required=""
-        /><br />
-        <input
-          type="text"
-          name="assigned_to"
-          placeholder="(opt)Assigned to"
-          style="width: 100px"
-        /><br />
-        <input
-          type="text"
-          name="status_text"
-          placeholder="(opt)Status text"
-          style="width: 100px"
-        /><br />
-        <button type="submit">Submit Issue</button>
+
+    <hr class="container" />
+
+    <section class="container mt-2">
+      <form id="testForm" class="row g-3">
+        <div class="col-12">
+          <label for="basic-url" class="form-label display-6">Submit issue to a project:</label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon3"></span>
+            <input
+              type="text"
+              class="form-control"
+              id="basic-url"
+              name="project"
+              aria-describedby="basic-addon3"
+              placeholder="project's name"
+              required
+            />
+          </div>
+          <div class="form-text">Go to /{project} to see all issues.</div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="issue_title"
+            placeholder="*Title"
+            required
+          />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input
+              type="text"
+              name="created_by"
+              placeholder="*Created by:"
+              required
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" name="assigned_to" placeholder="Assigned to:" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <textarea
+            type="text"
+            name="issue_text"
+            placeholder="*Text"
+            required
+            class="form-control"
+          ></textarea>
+        </div>
+
+        <div class="col-12 mb-3">
+          <input type="text" name="status_text" placeholder="Status:" class="form-control" />
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-primary col-12 mb-3">Submit Issue</button>
+        </div>
       </form>
-      <br />
-      <h3>
-        Update issue on <i>apitest</i> (Change any or all to update issue on the _id supplied)
-      </h3>
-      <form id="testForm2" class="border">
-        <input type="text" name="_id" placeholder="*_id" style="width: 100px" required="" /><br />
-        <input type="text" name="issue_title" placeholder="(opt)Title" style="width: 100px" /><br />
-        <textarea
-          type="text"
-          name="issue_text"
-          placeholder="(opt)Text"
-          style="width: 100px"
-        ></textarea
-        ><br />
-        <input
-          type="text"
-          name="created_by"
-          placeholder="(opt)Created by"
-          style="width: 100px"
-        /><br />
-        <input
-          type="text"
-          name="assigned_to"
-          placeholder="(opt)Assigned to"
-          style="width: 100px"
-        /><br />
-        <input
-          type="text"
-          name="status_text"
-          placeholder="(opt)Status text"
-          style="width: 100px"
-        /><br />
-        <label><input type="checkbox" name="open" value="false" /> Check to close issue</label
-        ><br />
-        <button type="submit">Submit Issue</button>
+      <hr />
+
+      <h1 class="display-6">Update issue on a project</h1>
+      <p class="text-muted">(Change any or all to update issue on the _id and project supplied)</p>
+      <form id="testForm2" class="row g-3">
+        <div class="col-12 mb-3">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon4"></span>
+            <input
+              type="text"
+              class="form-control"
+              id="basic-url"
+              name="project"
+              aria-describedby="basic-addon3"
+              placeholder="project's name"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-12 mb-3">
+          <input type="text" class="form-control" name="_id" placeholder="*_id" required />
+        </div>
+        <div class="col-12 mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="issue_title"
+            placeholder="*Title"
+            required
+          />
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input
+              type="text"
+              name="created_by"
+              placeholder="*Created by:"
+              required
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" name="assigned_to" placeholder="Assigned to:" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <textarea
+            type="text"
+            name="issue_text"
+            placeholder="*Text"
+            required
+            class="form-control"
+          ></textarea>
+        </div>
+
+        <div class="col-12 mb-3">
+          <input type="text" name="status_text" placeholder="Status:" class="form-control" />
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-primary col-12 mb-3">Submit Issue</button>
+        </div>
       </form>
-      <br />
-      <h3>Delete issue on <i>apitest</i></h3>
-      <form id="testForm3" class="border">
-        <input type="text" name="_id" placeholder="_id" style="width: 100px" required="" /><br />
-        <button type="submit">Delete Issue</button>
+      <hr />
+      <h1 class="display-6">Delete issue on project</h1>
+      <form id="testForm3">
+        <div class="col-12 mb-4">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon5"></span>
+            <input
+              type="text"
+              class="form-control"
+              id="basic-url"
+              name="project"
+              aria-describedby="basic-addon5"
+              placeholder="project's name"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-12 mb-3">
+          <input type="text" name="_id" placeholder="_id" class="form-control" required="" /><br />
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary col-12 mb-3">Delete Issue</button>
+        </div>
       </form>
       <code id="jsonResult"></code>
     </section>
-    <hr style="margin: 50px; margin-top: 200px" />
     <!-- Your web-app is https, so your scripts need to be too -->
     <script
       src="https://code.jquery.com/jquery-2.2.1.min.js"
@@ -145,10 +200,15 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      $('#basic-addon3').text(window.location.href);
+      $('#basic-addon4').text(window.location.href);
+      $('#basic-addon5').text(window.location.href);
+    </script>
+    <script>
       $(function () {
         $('#testForm').submit(function (e) {
           $.ajax({
-            url: '/api/issues/apitest',
+            url: `/api/issues/${$('#testForm').serializeArray()[0].value}`,
             type: 'post',
             data: $('#testForm').serialize(),
             success: function (data) {
@@ -159,7 +219,7 @@
         });
         $('#testForm2').submit(function (e) {
           $.ajax({
-            url: '/api/issues/apitest',
+            url: `/api/issues/${$('#testForm').serializeArray()[0].value}`,
             type: 'put',
             data: $('#testForm2').serialize(),
             success: function (data) {
@@ -170,7 +230,7 @@
         });
         $('#testForm3').submit(function (e) {
           $.ajax({
-            url: '/api/issues/apitest',
+            url: `/api/issues/${$('#testForm').serializeArray()[0].value}`,
             type: 'delete',
             data: $('#testForm3').serialize(),
             success: function (data) {
